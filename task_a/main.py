@@ -1,6 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel
-from src.ingestion import process_and_ingest_pdf
+from src.ingestion import process_and_ingest
 from src.query import get_answer_from_query
 
 app = FastAPI(title="Multimodal RAG API - Bank Mandiri", version="1.0")
@@ -18,11 +18,11 @@ async def ingest_document(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Hanya file PDF yang diperbolehkan.")
     
     try:
-        result = await process_and_ingest_pdf(file)
+        result = await process_and_ingest(file)
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
+    
 @app.post("/query")
 def query_document(request: QueryRequest):
     """

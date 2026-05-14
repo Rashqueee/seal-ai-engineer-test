@@ -5,3 +5,4 @@ chroma_db/
 notebooks/
 temp_*.pdf
 *.pdf
+ingestion/
