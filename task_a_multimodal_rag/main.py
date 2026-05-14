@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel
-from app.services.ingestion import process_and_ingest_pdf
-from app.services.query import get_answer_from_query
+from src.ingestion import process_and_ingest_pdf
+from src.query import get_answer_from_query
 
 app = FastAPI(title="Multimodal RAG API - Bank Mandiri", version="1.0")
 
