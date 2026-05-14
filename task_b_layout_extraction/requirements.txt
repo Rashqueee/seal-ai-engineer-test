@@ -2,5 +2,4 @@ easyocr
 opencv-python
 numpy
 pillow
-pytesseract
 matplotlib
