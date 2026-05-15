@@ -329,8 +329,8 @@ def process_slide(image_path, output_dir="."):
 
 # ENTRY POINT
 if __name__ == "__main__":
-    DATA_DIR   = "task_b_layout_extraction/data"
-    OUTPUT_DIR = "task_b_layout_extraction/output"
+    DATA_DIR   = "data/"
+    OUTPUT_DIR = "output/"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # Proses batch konversi seluruh dokumen 1 - 5
